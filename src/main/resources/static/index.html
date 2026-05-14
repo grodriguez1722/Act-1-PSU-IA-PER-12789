@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tablero Kanban</h1>
+        <div class="new-task-container">
+            <input type="text" id="newTaskTitle" placeholder="Título de la tarea">
+            <input type="text" id="newTaskDesc" placeholder="Descripción">
+            <button onclick="createTask()">Añadir Tarea</button>
+        </div>
+
+        <div class="board">
+            <div class="column" id="TODO" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Pendiente</h2>
+                <div class="tasks" id="tasks-TODO"></div>
+            </div>
+            
+            <div class="column" id="IN_PROGRESS" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>En Progreso</h2>
+                <div class="tasks" id="tasks-IN_PROGRESS"></div>
+            </div>
+            
+            <div class="column" id="DONE" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Completado</h2>
+                <div class="tasks" id="tasks-DONE"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
